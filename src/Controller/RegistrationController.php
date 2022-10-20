@@ -135,7 +135,7 @@ class RegistrationController extends AbstractController
         $mail->send('no-reply@snowtricks.com',
             $user->getEmail(),
             'Activation de votre compte sur le SnowTricks',
-            'confirmation_email',
+            'confirmationSignInEmail',
             compact('user', 'token')
         );
         $this->addFlash('success', "Un email de confirmation de votre compte vient de vous être renvoyé");

@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ba479b13-5306-4ade-87c7-f267d8a27802" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ForgottenPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ForgottenPasswordController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MainController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/PasswordForgottenForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/PasswordForgottenForm.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/password/forgottenPassword.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/password/forgottenPassword.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/register.html.twig" afterDir="false" />
-    </list>
+    <list default="true" id="ba479b13-5306-4ade-87c7-f267d8a27802" name="Changes" comment="fix/AUTHENTIFICATION&#10; - Modification of the User entity: Addition of uses for annotations&#10; - Modification of forget password controllers: Modification of the form (view/form) for sending mail via the username" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -202,8 +192,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1666292711065</updated>
-      <workItem from="1666292714544" duration="13289000" />
+      <workItem from="1666292714544" duration="13620000" />
     </task>
+    <task id="LOCAL-00001" summary="fix/AUTHENTIFICATION&#10; - Modification of the User entity: Addition of uses for annotations&#10; - Modification of forget password controllers: Modification of the form (view/form) for sending mail via the username">
+      <created>1666307462308</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1666307462308</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,6 +217,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fix/AUTHENTIFICATION&#10; - Modification of the User entity: Addition of uses for annotations&#10; - Modification of forget password controllers: Modification of the form (view/form) for sending mail via the username" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix/AUTHENTIFICATION&#10; - Modification of the User entity: Addition of uses for annotations&#10; - Modification of forget password controllers: Modification of the form (view/form) for sending mail via the username" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
