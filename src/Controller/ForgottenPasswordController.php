@@ -25,16 +25,15 @@ class ForgottenPasswordController extends AbstractController
     #[Route('/mot-de-passe-oublier', name: 'app_forgotten_password')]
     public function forgottenPassword(Request $request, SendMailService $mail, JWTService $jwt, UserRepository $userRepository): Response
     {
-        $user = new User();
-        $form = $this->createForm(PasswordForgottenForm::class, $user);
+        $form = $this->createForm(PasswordForgottenForm::class);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $email = $form->get('email')->getData();
-            $userBdd = $userRepository->findOneByEmail($email);
+            $username = $form->get('username')->getData();
+            $userBdd = $userRepository->findOneByUsername($username);
 
             if ($userBdd === null){
-                $this->addFlash('warning', "Email non reconnu, veuillez ressayé.");
+                $this->addFlash('warning', "Nom d'utilisateur non reconnu, veuillez ressayé.");
                 return $this->redirectToRoute('app_forgotten_password');
             }
             // On génère le JWT de l'utilisateur
@@ -51,12 +50,13 @@ class ForgottenPasswordController extends AbstractController
 
             // generate a signed url and email it to the user
             $mail->send('no-reply@snowtricks.com',
-                $user->getEmail(),
+                $userBdd->getEmail(),
                 'Reinitialisation de votre mot de passe',
                 'resetPasswordEmail',
                 compact('userBdd', 'token')
             );
             $this->addFlash('success', "Veuillez verifier votre boîte mail pour modifié votre mot de passe");
+            return $this->redirectToRoute('app_home');
         }
 
         return $this->render('password/forgottenPassword.html.twig', ['passwordForgottenForm' => $form->createView(),]);

@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use DateTime;
+use DateTimeImmutable;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,16 +18,15 @@ class MainController extends AbstractController
     {
         /** @var User $user */
         $user = $this->getUser();
-
         if ($user){
             $dateCreated = $user->getCreatedAt();
-            if (!$user->isVerified() && $user->getCreatedAt() > $dateCreated->add(new \DateInterval('PT1H'))){
+            $now = new DateTime();
+            $diffTime = $user->getCreatedAt()->diff($now);
+            if (!$user->isVerified() && $diffTime->h >= 1){
                 $url = $urlGenerator->generate('app_mail_resend');
                 $this->addFlash('warning', "Votre compte n'a pas était vérifier. <a href='$url'>Recevoir de nouveau l'email de confirmation</a>");
             }
         }
-
-
         return $this->render('main/index.html.twig', [
             'controller_name' => 'MainController',
         ]);

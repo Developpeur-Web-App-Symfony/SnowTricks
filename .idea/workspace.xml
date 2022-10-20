@@ -1,57 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7b76cd67-c8f5-458e-92c6-2f262f8b77a4" name="Changes" comment="AUTHENTIFICATION :&#10; - Creation of the User entity&#10; - Creation of controllers for registration, connection, forget password...&#10; - Setting up roads&#10; - Setting up emails during registration for validation&#10; - Creation of views">
-      <change afterPath="$PROJECT_DIR$/migrations/Version20221013154705.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20221017102744.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20221020144157.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/ForgottenPasswordController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/MainController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/RegistrationController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/PasswordForgottenForm.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/ResetPasswordForm.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Security/Authenticator.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/JWTService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/SendMailService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/email/confirmationSignInEmail.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/email/resetPasswordEmail.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/main/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/password/forgottenPassword.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/password/resetPassword.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/registration/register.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/SnowTricks.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SnowTricks.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="ba479b13-5306-4ade-87c7-f267d8a27802" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/messenger.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/messenger.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ForgottenPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ForgottenPasswordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MainController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/PasswordForgottenForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/PasswordForgottenForm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/password/forgottenPassword.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/password/forgottenPassword.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/register.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" doNotAsk="true" synchronizationState="DONT_SYNCHRONIZE">
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution>
-      <executable path="composer" />
-    </execution>
+    <execution />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/INSTALL_PROJECT" />
+        <entry key="$PROJECT_DIR$" value="feature/AUTHENTIFICATION" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -197,7 +170,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/amqp-messenger" />
     </include_path>
   </component>
-  <component name="ProjectId" id="2G4fbwVskqeslTZH7nPbdJFm4px" />
+  <component name="ProjectId" id="2GPaWztbj43Me5jCp9VhO1tfdS6" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -207,37 +180,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/wamp64/www/SnowTricks/templates/password",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.webide.settings.project.settings.php.composer",
+    "settings.editor.selected.configurable": "reference.webide.settings.project.settings.php",
     "vue.rearranger.settings.migration": "true"
-  },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
-    ]
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\SnowTricks\templates\password" />
-      <recent name="C:\wamp64\www\SnowTricks\src\Form" />
-      <recent name="C:\wamp64\www\SnowTricks\templates\email" />
-      <recent name="C:\wamp64\www\SnowTricks\src\Controller" />
-      <recent name="C:\wamp64\www\SnowTricks" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\SnowTricks\templates\email" />
-      <recent name="C:\wamp64\www\SnowTricks\src\Repository" />
-      <recent name="C:\wamp64\www\SnowTricks\src\Entity" />
-      <recent name="C:\wamp64\www\SnowTricks\src" />
-      <recent name="C:\wamp64\www\SnowTricks" />
-    </key>
-  </component>
   <component name="RunManager">
     <configuration name="phpunit.xml.dist" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
@@ -245,45 +195,15 @@
     </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
-  <component name="SvnConfiguration">
-    <configuration>C:\Users\matth\AppData\Roaming\Subversion</configuration>
-    <option name="sshConnectionType" value="PRIVATE_KEY" />
-    <option name="sshPrivateKeyPath" value="C:\Users\matth\.ssh\id_ed25519.pub" />
-  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="7b76cd67-c8f5-458e-92c6-2f262f8b77a4" name="Changes" comment="" />
-      <created>1665652851604</created>
+      <changelist id="ba479b13-5306-4ade-87c7-f267d8a27802" name="Changes" comment="" />
+      <created>1666292711065</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1665652851604</updated>
-      <workItem from="1665652852868" duration="12975000" />
-      <workItem from="1665668772255" duration="1350000" />
-      <workItem from="1665746134893" duration="8071000" />
-      <workItem from="1665999216876" duration="73165000" />
+      <updated>1666292711065</updated>
+      <workItem from="1666292714544" duration="13289000" />
     </task>
-    <task id="LOCAL-00001" summary="INSTALL_PROJECT :&#10; - Composer facility&#10; - Installing symfony&#10; - Connection and creation of the database">
-      <created>1665656154237</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1665656154237</updated>
-    </task>
-    <task id="LOCAL-00002" summary="INSTALL_PROJECT :&#10; - add .idea gitignore">
-      <created>1665663242175</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1665663242175</updated>
-    </task>
-    <task id="LOCAL-00003" summary="INSTALL_PROJECT :&#10; - reinstall full project symfony">
-      <created>1665670068195</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1665670068195</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -294,31 +214,11 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="feature/INSTALL_PROJECT" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="INSTALL_PROJECT :&#10; - Composer facility&#10; - Installing symfony&#10; - Connection and creation of the database" />
-    <MESSAGE value="INSTALL_PROJECT :&#10; - add .idea gitignore" />
-    <MESSAGE value="INSTALL_PROJECT :&#10; - reinstall full project symfony" />
-    <MESSAGE value="AUTHENTIFICATION :&#10; - Creation of the User entity&#10; - Creation of controllers for registration, connection, forget password...&#10; - Setting up roads&#10; - Setting up emails during registration for validation&#10; - Creation of views" />
-    <option name="LAST_COMMIT_MESSAGE" value="AUTHENTIFICATION :&#10; - Creation of the User entity&#10; - Creation of controllers for registration, connection, forget password...&#10; - Setting up roads&#10; - Setting up emails during registration for validation&#10; - Creation of views" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
