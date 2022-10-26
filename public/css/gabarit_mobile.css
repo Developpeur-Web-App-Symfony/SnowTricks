@@ -1,0 +1,40 @@
+footer{
+    margin-bottom: 56px;
+}
+
+a, [class*="fa-"]{
+   color: #2b5a40;
+}
+
+.slide-home{
+    min-height: 300px;
+    text-align: center;
+}
+
+.slide-home > a{
+    right: 20px;
+}
+
+.tricks-home{
+    border: 2px solid #2b5a40;
+    border-radius: 5px;
+}
+
+.infos-tricks-home{
+    border-top: 2px solid #2b5a40;
+}
+
+/* REGISTRATION */
+
+.register-form > div{
+    border: 2px solid #2b5a40;
+}
+
+.btn-form-class{
+    background-color: #2b5a40;
+    color: white;
+}
+
+.form-control{
+    border-width: 0 0 1px 0;
+}

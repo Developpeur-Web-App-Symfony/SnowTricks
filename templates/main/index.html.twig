@@ -1,23 +1,37 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello MainController!{% endblock %}
+{% block title %}Bienvenue sur le site communautaire de SnowTricks!{% endblock %}
 
 {% block body %}
-
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-    {% for message in app.flashes('success') %}
-        <div class="alert alert-success" role="alert">{{ message }}</div>
-    {% endfor %}
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/wamp64/www/SnowTricks/src/Controller/MainController.php'|file_link(0) }}">src/Controller/MainController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/wamp64/www/SnowTricks/templates/main/index.html.twig'|file_link(0) }}">templates/main/index.html.twig</a></code></li>
-    </ul>
-</div>
+    <section>
+        <div class="d-flex justify-content-around flex-column slide-home position-relative">
+            <h1>Bienvenue sur SnowTricks</h1>
+            <h2>Le site communautaire de figure de snowboard !</h2>
+            {# Arrow that allows you to go down to the figures section #}
+            <a href="#tricks" class="btn-get-started scrollto position-absolute bottom-0"><i class="fas fa-arrow-down"></i></a>
+        </div>
+    </section>
+    <div id="tricks" class="container-fluid">
+            {# Rajouter la boucle des figures #}
+            <div class="tricks-home p-1 text-center my-2">
+                <img class="img-fluid" src="{{ asset('media/logo.png') }}" alt="">
+                <div class="infos-tricks-home d-flex justify-content-around align-items-center">
+                    <div>
+                        <a href="#">
+                        <h1 class="m-0">Titre</h1>
+                        </a>
+                    </div>
+                    {% if app.user %}
+                        <div class="d-flex align-items-center">
+                            <a class="btn-form" href="#"><i class="fas fa-edit"></i></a>
+                            <form method="post" action="/article/delete">
+                                <input type="hidden" name="deleteArticleId" value="#">
+                                <input type="hidden" name="articleToken" value="#">
+                                <button type="button" class="btn"><i class="fa fa-trash"></i></button>
+                            </form>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+    </div>
 {% endblock %}
