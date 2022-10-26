@@ -7,19 +7,17 @@
         <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
     {% endfor %}
 
-    <h1>Inscription</h1>
+    <div class="register-form container-fluid text-center p-3">
+        <div class="m-2 p-3">
+            <h1>Inscription</h1>
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.username) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
-    <ul>
-        <li>
-            <a href="{{ path('app_login') }}">Je possède un compte utilisateur</a>
-        </li>
-    </ul>
+            {{ form(registrationForm) }}
+            <ul class="list-unstyled">
+                <li>
+                    <a href="{{ path('app_login') }}">Vous possédez un compte ?</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
 {% endblock %}

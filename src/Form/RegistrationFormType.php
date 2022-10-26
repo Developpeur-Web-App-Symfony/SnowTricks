@@ -6,6 +6,7 @@ use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -22,6 +23,7 @@ class RegistrationFormType extends AbstractType
             ->add('email')
             ->add('plainPassword', PasswordType::class, [
                 'mapped' => false,
+                'label' => "Entrez votre mot de passe",
                 'attr' => ['autocomplete' => 'new-password'],
                 'constraints' => [
                     new NotBlank(['message' => 'Entrez votre mot de passe']),
@@ -30,6 +32,10 @@ class RegistrationFormType extends AbstractType
                         'max' => 4096,
                     ]),
                 ],
+            ])
+            ->add("registration", SubmitType::class, [
+                'label' => "S'inscrire",
+                'attr' => ['class' => 'btn-form-class'],
             ])
         ;
     }
