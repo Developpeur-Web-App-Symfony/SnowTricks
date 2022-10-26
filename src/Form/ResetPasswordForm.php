@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Length;
@@ -16,6 +17,7 @@ class ResetPasswordForm extends AbstractType
     {
         $builder
             ->add('plainPassword', PasswordType::class, [
+                'label' => "Nouveau mot de passe",
                 'mapped' => false,
                 'attr' => ['autocomplete' => 'new-password'],
                 'constraints' => [
@@ -25,6 +27,10 @@ class ResetPasswordForm extends AbstractType
                         'max' => 4096,
                     ]),
                 ],
+            ])
+            ->add("resetPassword", SubmitType::class, [
+                'label' => "Enregistrer le nouveau mot de passe",
+                'attr' => ['class' => 'btn-form-class'],
             ])
         ;
     }
