@@ -24,9 +24,9 @@ a, [class*="fa-"]{
     border-top: 2px solid #2b5a40;
 }
 
-/* REGISTRATION */
+/* REGISTRATION LOGIN RESET PASSWORD*/
 
-.register-form > div{
+.register-form > div, .login-form > div, .reset-form > div{
     border: 2px solid #2b5a40;
 }
 
