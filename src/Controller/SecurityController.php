@@ -11,9 +11,9 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 class SecurityController extends AbstractController
 {
 
-    const ROLES_USER_VERIFIED = "USER_VERIFIED";
+    const ROLES_USER_VERIFIED = "ROLE_USER_VERIFIED";
     const ROLE_USER = "ROLE_USER";
-    const ROLES_ADMIN = "ADMIN";
+    const ROLES_ADMIN = "ROLE_ADMIN";
 
 
     #[Route('/connexion', name: 'app_login')]

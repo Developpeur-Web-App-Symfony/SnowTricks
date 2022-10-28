@@ -24,6 +24,14 @@ a, [class*="fa-"]{
     border-top: 2px solid #2b5a40;
 }
 
+@media screen and (min-width: 992px) {
+    .alert{
+        margin-top: 56px;
+    }
+}
+
+
+
 /* REGISTRATION LOGIN RESET PASSWORD*/
 
 .register-form > div, .login-form > div, .reset-form > div{

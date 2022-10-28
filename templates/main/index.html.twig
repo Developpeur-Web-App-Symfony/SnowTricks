@@ -13,25 +13,27 @@
     </section>
     <div id="tricks" class="container-fluid">
             {# Rajouter la boucle des figures #}
+        {% for trick in tricks %}
             <div class="tricks-home p-1 text-center my-2">
                 <img class="img-fluid" src="{{ asset('media/logo.png') }}" alt="">
                 <div class="infos-tricks-home d-flex justify-content-around align-items-center">
                     <div>
                         <a href="#">
-                        <h1 class="m-0">Titre</h1>
+                        <h1 class="m-0">{{ trick.name }}Titre</h1>
                         </a>
                     </div>
                     {% if app.user %}
                         <div class="d-flex align-items-center">
                             <a class="btn-form" href="#"><i class="fas fa-edit"></i></a>
-                            <form method="post" action="/article/delete">
-                                <input type="hidden" name="deleteArticleId" value="#">
-                                <input type="hidden" name="articleToken" value="#">
+                            <form method="post" action="/trick/delete">
+                                <input type="hidden" name="deleteTrickId" value="#">
+                                <input type="hidden" name="trickToken" value="#">
                                 <button type="button" class="btn"><i class="fa fa-trash"></i></button>
                             </form>
                         </div>
                     {% endif %}
                 </div>
             </div>
+        {% endfor %}
     </div>
 {% endblock %}
