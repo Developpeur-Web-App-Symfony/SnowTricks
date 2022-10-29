@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Repository\TrickRepository;
 use DateTime;
 use DateTimeImmutable;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -14,7 +15,7 @@ use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 class MainController extends AbstractController
 {
     #[Route('/', name: 'app_home')]
-    public function index(Request $request, UrlGeneratorInterface $urlGenerator): Response
+    public function index(Request $request, UrlGeneratorInterface $urlGenerator, TrickRepository $trickRepository): Response
     {
         /** @var User $user */
         $user = $this->getUser();
@@ -29,6 +30,7 @@ class MainController extends AbstractController
         }
         return $this->render('main/index.html.twig', [
             'controller_name' => 'MainController',
+            'tricks' => $trickRepository->findTricksLastUpdated(),
         ]);
     }
 }

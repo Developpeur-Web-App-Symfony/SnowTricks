@@ -33,6 +33,10 @@ class RegistrationController extends AbstractController
         JWTService $jwt
     ): Response
     {
+        if ($this->getUser()) {
+            return $this->redirectToRoute('app_home');
+        }
+
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
@@ -72,7 +76,7 @@ class RegistrationController extends AbstractController
             );
             $this->addFlash('success', "Veuillez verifier votre boîte mail pour valider votre compte");
 
-            return $userAuthenticator->authenticateUser($user, $authenticator, $request);
+            return $this->redirectToRoute('app_login');
         }
 
         return $this->render('registration/register.html.twig', ['registrationForm' => $form->createView(),]);
