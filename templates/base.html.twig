@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}{% endblock %}</title>
-    {% block stylesheets %}{{ encore_entry_link_tags('gabarit') }}
+    {% block stylesheets %}{{ encore_entry_link_tags('app') }}
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     {% endblock %}
 </head>
 <body>
 {% set route = app.request.attributes.get('_route') %}
-<header class="mt-lg-5">
+<header>
     <!-- Navigation-->
     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light d-none d-lg-block">
         <div class="container-fluid">
@@ -98,7 +98,8 @@
         <div class="container"><p class="m-0 small">Copyright &copy; Your Website 2022</p></div>
     </footer>
 {% endblock %}
-{% block javascripts %}{{ encore_entry_script_tags('gabarit') }}
+{% block javascripts %}{{ encore_entry_script_tags('app') }}
+    {{ encore_entry_script_tags('jquery') }}
     <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
 {% endblock %}
 </body>

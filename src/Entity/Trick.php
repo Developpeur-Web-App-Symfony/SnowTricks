@@ -10,6 +10,8 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Entity(repositoryClass: TrickRepository::class)]
 class Trick
 {
+    const ALT_DEFAULT = "image par défaut" ;
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: 'integer')]
@@ -144,7 +146,6 @@ class Trick
 
         return $this;
     }
-
 
     public function getGroupTrick(): ?Group
     {

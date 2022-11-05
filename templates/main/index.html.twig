@@ -7,33 +7,47 @@
         <div class="d-flex justify-content-around flex-column slide-home position-relative">
             <h1>Bienvenue sur SnowTricks</h1>
             <h2>Le site communautaire de figure de snowboard !</h2>
-            {# Arrow that allows you to go down to the figures section #}
-            <a href="#tricks" class="btn-get-started scrollto position-absolute bottom-0"><i class="fas fa-arrow-down"></i></a>
+            <a href="#trick" class="scrollto position-absolute bottom-0"><i class="fas fa-arrow-down"></i></a>
         </div>
     </section>
-    <div id="tricks" class="container-fluid">
-            {# Rajouter la boucle des figures #}
-        {% for trick in tricks %}
-            <div class="tricks-home p-1 text-center my-2">
-                <img class="img-fluid" src="{{ asset('media/logo.png') }}" alt="">
-                <div class="infos-tricks-home d-flex justify-content-around align-items-center">
-                    <div>
-                        <a href="#">
-                        <h1 class="m-0">{{ trick.name }}Titre</h1>
-                        </a>
-                    </div>
-                    {% if app.user %}
-                        <div class="d-flex align-items-center">
-                            <a class="btn-form" href="#"><i class="fas fa-edit"></i></a>
-                            <form method="post" action="/trick/delete">
-                                <input type="hidden" name="deleteTrickId" value="#">
-                                <input type="hidden" name="trickToken" value="#">
-                                <button type="button" class="btn"><i class="fa fa-trash"></i></button>
-                            </form>
-                        </div>
+    <div id="trick" class="container-fluid">
+        <div class="row justify-content-around" id="moreContent" {% if app.user %}data-attribute="true"{% else %} data-attribute="false"{% endif %}>
+            {% for trick in tricks %}
+                <div class="col-11 col-lg-2 tricks-home p-1 text-center m-2">
+                    {% if trick.additionalImage is not empty %}
+                        <img class="img-fluid" src="{{ asset('media/picture/') }}{{ trick.additionalImage }}" alt="{{ trick.altImage }}">
+                    {% else %}
+                        <img class="img-fluid" src="{{ asset('media/picture/default_picture.jpg') }}" alt="{{ constant('ALT_DEFAULT', trick) }}">
                     {% endif %}
+                    <div class="infos-tricks-home d-flex justify-content-around align-items-center">
+                        <div>
+                            <a href="{{ path('app_trick',{slug : trick.slug})}}">
+                                <p>{{ trick.name }}</p>
+                            </a>
+                        </div>
+                        {% if app.user %}
+                            <div class="d-flex align-items-center">
+                                <a class="btn-form" title="Modifier la figure" href="#"><i class="fas fa-pencil-alt"></i></a>
+                                <form method="post" action="/trick/delete/">
+                                    <input type="hidden" name="deleteTrickId" value="#">
+                                    <input type="hidden" name="trickToken" value="#">
+                                    <button type="button" title="Supprimer la figure" class="btn"><i class="fa fa-trash"></i></button>
+                                </form>
+                            </div>
+                        {% endif %}
+                    </div>
                 </div>
-            </div>
-        {% endfor %}
+            {% endfor %}
+        </div>
     </div>
+
+    <div class="col-12 text-center my-3 position-relative">
+        <button class="btn btn-info" id="load-more-tricks">Voir plus</button>
+        <input type="hidden" id="showMoreOffset" value="8"/>
+        <a id="btn-back-to-top" href="#trick" class="btn-get-started scrollto position-absolute bottom-0"><i class="fas fa-arrow-up"></i></a>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ encore_entry_script_tags('scrollHome') }}
+    {{ encore_entry_script_tags('loadMore') }}
 {% endblock %}
