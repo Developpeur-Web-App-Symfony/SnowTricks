@@ -11,7 +11,7 @@ a, [class*="fa-"]{
     text-align: center;
 }
 
-.slide-home > a{
+.slide-home > a,#btn-back-to-top{
     right: 20px;
 }
 
@@ -24,9 +24,20 @@ a, [class*="fa-"]{
     border-top: 2px solid #2b5a40;
 }
 
+/* TRICK DETAIL */
+.media-trick{
+    display: none;
+}
+
 @media screen and (min-width: 992px) {
-    .alert{
-        margin-top: 56px;
+    .alert, body{
+        margin-top: 74px;
+    }
+
+    .media-trick{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
     }
 }
 

@@ -47,6 +47,16 @@ class TrickRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult();
     }
+
+    public function findLoadMoreTricks($offset, $end)
+    {
+        return $this->createQueryBuilder('t')
+            ->orderBy('t.updatedAt', 'DESC')
+            ->setFirstResult($offset)
+            ->setMaxResults($end)
+            ->getQuery()
+            ->getResult();
+    }
 //    /**
 //     * @return Trick[] Returns an array of Trick objects
 //     */

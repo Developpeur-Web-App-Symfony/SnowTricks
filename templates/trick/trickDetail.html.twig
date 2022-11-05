@@ -1,0 +1,109 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ trick.name }}{% endblock %}
+
+{% block body %}
+    <div class="container-fluid py-5">
+        <div class="container-lg">
+            <div class="position-relative d-flex align-items-center text-center">
+                {% if trick.additionalImage is not empty %}
+                    <img class="img-fluid" src="{{ asset('media/picture/') }}{{ trick.additionalImage }}"
+                        alt="{{ trick.altImage }}">
+                {% else %}
+                    <img class="img-fluid" src="{{ asset('media/picture/default_picture.jpg') }}"
+                         alt="{{ constant('ALT_DEFAULT', trick) }}">
+                {% endif %}
+                {% if app.user %}
+                    <div class="d-flex align-items-center position-absolute top-0 end-0 m-2">
+                        <a class="btn-form" title="Modifier l'image à la une'" href="#"><i class="fas fa-pencil-alt"></i></a>
+                        <form method="post" action="/trick/deleteImageAdd/{{ trick.slug }}"
+                              onsubmit="return confirm('Êtes-vous sûr de bien vouloir supprimer {{ trick.additionalImage }} ?');">
+                            <input type="hidden" name="deleteAdditionnalImage" value="#">
+                            <input type="hidden" name="trickToken" value="#">
+                            <button type="button" title="Supprimer l'image" class="btn"><i class="fa fa-trash"></i>
+                            </button>
+                        </form>
+                    </div>
+                {% endif %}
+                <div class="position-absolute w-100">
+                    <h1 class="text-light">{{ trick.name }}</h1>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-3" id="media">
+                <div class="col-8 col-md-6 d-lg-none text-center">
+                    <button class="btn btn-info" id="more-media">Afficher les médias</button>
+                </div>
+                <div class="row media-trick">
+                    {% if trick.pictures is not empty %}
+                        <div class="col-md-6">
+                            <div class="row">
+                                {% for picture in trick.pictures %}
+                                    <div class="col-md-12 col-sm-12 col-lg-4 mb-3">
+                                        <a href="#" class="">
+                                            <img class="img-fluid" src="{{ asset('media/picture/') }}{{ picture.filename }}"
+                                                 alt="{{ picture.alt }}"/>
+                                        </a>
+                                        {% if app.user %}
+                                            <div class="d-flex align-items-center justify-content-center border-1 border border-top-0">
+                                                <a class="btn-form" title="Modifier l'image'" href="#"><i
+                                                            class="fas fa-pencil-alt"></i></a>
+                                                <form method="post" action="/trick/deleteImage/{{ picture.filename }}"
+                                                      onsubmit="return confirm('Êtes-vous sûr de bien vouloir supprimer {{ picture.filename }} ?');">
+                                                    <input type="hidden" name="deleteImage" value="#">
+                                                    <input type="hidden" name="trickToken" value="#">
+                                                    <button type="button" title="Supprimer l'image {{ picture.filename }}" class="btn"><i
+                                                                class="fa fa-trash"></i></button>
+                                                </form>
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endif %}
+                    {% if trick.movies is not empty %}
+                        <div class="col-md-6">
+                            <div class="row">
+                                {% for movie in trick.movies %}
+                                    <div class="col-md-12 col-sm-12 col-lg-4  mb-3">
+                                        <a href="#" class="">
+                                            <iframe src="{{ asset('media/movie/') }}{{ movie.url }}" allowfullscreen></iframe>
+                                        </a>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+
+            </div>
+            <div class="row justify-content-center py-4">
+                <div class="col-8">
+                    <p class="text-justify w-100">{{ trick.description }}</p>
+                </div>
+            </div>
+            <div class="row justify-content-center py-4">
+                <div class="col-12 text-center justify-content-around d-flex">
+                    {% if trick.updatedAt|format_datetime() != trick.createdAt|format_datetime() %}
+                        <p>Date de dernière modification: {{ trick.updatedAt|format_datetime(locale='fr') }}</p>
+                    {% else %}
+                        <p>Date de création: {{ trick.createdAt|format_datetime(locale='fr') }}</p>
+                    {% endif %}
+                    <p>Catégorie: {{ trick.groupTrick.name }}</p>
+                </div>
+            </div>
+            {% if app.user %}
+                <div class="row justify-content-center">
+                    <div class="col-10 border-top border-bottom border-2">
+                        {#                    COMMENTAIRE A METTRE EN PLACE             #}
+                    </div>
+                </div>
+            {% endif %}
+
+            {#            ESPACE COMMENTAIRE A METTRE EN PLACE              #}
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ encore_entry_script_tags('moreMediaTrickView') }}
+{% endblock %}
