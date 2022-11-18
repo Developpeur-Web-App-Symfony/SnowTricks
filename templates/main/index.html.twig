@@ -10,6 +10,12 @@
             <a href="#trick" class="scrollto position-absolute bottom-0"><i class="fas fa-arrow-down"></i></a>
         </div>
     </section>
+    {% if app.user %}
+        <div class="col-12 text-center my-3">
+            <a href="{{ path('app_trick_new') }}" class="btn btn-info">Créer une figure</a>
+        </div>
+
+    {% endif %}
     <div id="trick" class="container-fluid">
         <div class="row justify-content-around" id="moreContent" {% if app.user %}data-attribute="true"{% else %} data-attribute="false"{% endif %}>
             {% for trick in tricks %}

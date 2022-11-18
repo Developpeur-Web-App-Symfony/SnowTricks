@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Entity(repositoryClass: TrickRepository::class)]
 class Trick
 {
-    const ALT_DEFAULT = "image par défaut" ;
+    const ALT_DEFAULT = "description par défaut" ;
 
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -42,7 +42,7 @@ class Trick
     #[ORM\JoinColumn(nullable: false)]
     private ?Group $groupTrick = null;
 
-    #[ORM\OneToMany(mappedBy: 'trick', targetEntity: Picture::class, orphanRemoval: true)]
+    #[ORM\OneToMany(mappedBy: 'trick', targetEntity: Picture::class, cascade: ['persist'], orphanRemoval: true,)]
     private Collection $pictures;
 
     #[ORM\OneToMany(mappedBy: 'trick', targetEntity: Movie::class, orphanRemoval: true)]
@@ -170,7 +170,7 @@ class Trick
     public function addPicture(Picture $picture): self
     {
         if (!$this->pictures->contains($picture)) {
-            $this->pictures->add($picture);
+            $this->pictures[] = $picture;
             $picture->setTrick($this);
         }
 
