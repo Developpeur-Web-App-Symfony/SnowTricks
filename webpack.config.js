@@ -25,6 +25,8 @@ Encore
     .addEntry('scrollHome', './assets/js/scrollPage.js')
     .addEntry('loadMore', './assets/js/loadMore.js')
     .addEntry('moreMediaTrickView', './assets/js/moreMediaView.js')
+    .addEntry('addMovieTrick', './assets/js/addMovieEntry.js')
+    .addEntry('addPictureTrick', './assets/js/addPictureEntry.js')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')

@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Création d'une nouvelle Figure{% endblock %}
+
+{% block body %}
+    <div class="container-fluid py-5">
+        <div class="container-lg">
+            <h1 class="mt-3">Création d'une nouvelle figure</h1>
+            {{ form_start(createTrickForm) }}
+                {{ form_row(createTrickForm.name) }}
+                {{ form_row(createTrickForm.description) }}
+                {{ form_row(createTrickForm.additionalImage) }}
+                {{ form_row(createTrickForm.altImage) }}
+            {# Modèle de formulaire de l'ajout d'image et vidéo passer dans l'attribut prototype#}
+
+            <div id="create_trick_picture" class="create-pic"
+                 data-prototype="{{ form_row(createTrickForm.pictures.vars.prototype.filename)|e('html_attr') }}">
+                {{ form_row(createTrickForm.pictures) }}
+                <span class="pic"></span>
+            </div>
+
+            <div id="create_trick_movie" class="create-mov" data-prototype="{{ form_row(createTrickForm.movies.vars.prototype.url)|e('html_attr') }}">
+                {{ form_row(createTrickForm.movies) }}
+                <span class="mov"></span>
+            </div>
+                {{ form_row(createTrickForm.groupTrick) }}
+            <input class="btn-form-class btn" type="submit" value="valider">
+            {{ form_end(createTrickForm) }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('addMovieTrick') }}
+    {{ encore_entry_script_tags('addPictureTrick') }}
+{% endblock %}
