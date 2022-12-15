@@ -6,6 +6,8 @@ use App\Repository\TrickRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 #[ORM\Entity(repositoryClass: TrickRepository::class)]
 class Trick
@@ -33,6 +35,7 @@ class Trick
     private ?string $slug = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Assert\Image(maxSize: '2M', mimeTypes: ['image/jpeg','image/jpg','image/png'], mimeTypesMessage: 'Veuillez selectionner un format valide (jpeg, jpg, png)')]
     private ?string $additionalImage = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -42,10 +45,11 @@ class Trick
     #[ORM\JoinColumn(nullable: false)]
     private ?Group $groupTrick = null;
 
-    #[ORM\OneToMany(mappedBy: 'trick', targetEntity: Picture::class, cascade: ['persist'], orphanRemoval: true,)]
+    #[ORM\OneToMany(mappedBy: 'trick', targetEntity: Picture::class, cascade: ['persist'], orphanRemoval: true)]
+    #[Assert\Valid]
     private Collection $pictures;
 
-    #[ORM\OneToMany(mappedBy: 'trick', targetEntity: Movie::class, orphanRemoval: true)]
+    #[ORM\OneToMany(mappedBy: 'trick', targetEntity: Movie::class, cascade: ['persist'], orphanRemoval: true)]
     private Collection $movies;
 
     #[ORM\ManyToOne(inversedBy: 'tricks')]
@@ -159,9 +163,7 @@ class Trick
         return $this;
     }
 
-    /**
-     * @return Collection<int, Picture>
-     */
+
     public function getPictures(): Collection
     {
         return $this->pictures;

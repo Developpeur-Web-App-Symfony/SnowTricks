@@ -67,8 +67,22 @@
                                 {% for movie in trick.movies %}
                                     <div class="col-md-12 col-sm-12 col-lg-4  mb-3">
                                         <a href="#" class="">
-                                            <iframe src="{{ asset('media/movie/') }}{{ movie.url }}" allowfullscreen></iframe>
+                                            <iframe id="video{{ movie.id }}" src="{{ movie.url }}" width="100%" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
                                         </a>
+                                        {% if app.user %}
+                                            <div class="d-flex align-items-center justify-content-center border-1 border border-top-0">
+                                                <a class="btn-form" title="Modifier la vidéo" href="#"><i
+                                                            class="fas fa-pencil-alt"></i></a>
+                                                <form method="post" action="/trick/deleteMovie/{{ movie.id }}"
+                                                      onsubmit="return confirm('Êtes-vous sûr de bien vouloir supprimer {{ movie.id }} ?');">
+                                                    <input type="hidden" name="deleteMovie" value="#">
+                                                    <input type="hidden" name="trickToken" value="#">
+                                                    <button type="button" title="Supprimer la vidéo {{ movie.id }}" class="btn"><i
+                                                                class="fa fa-trash"></i></button>
+                                                </form>
+                                            </div>
+                                        {% endif %}
                                     </div>
                                 {% endfor %}
                             </div>
